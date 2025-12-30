@@ -1,0 +1,12 @@
+{
+    "name": "_____/_____",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "_____\\": "src/"
+        }
+    },
+    "require": {
+        "vjik/scaffolder": "dev-master"
+    }
+}
