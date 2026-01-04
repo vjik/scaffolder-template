@@ -41,6 +41,65 @@ Or if you want to apply changes to a specific directory:
 php src/run.php --directory=/path/to/project
 ```
 
+## Packaging as Docker Image
+
+For easier distribution and usage, you can package your scaffolder tool as a Docker image.
+
+### 1. Configure Image Name
+
+Edit `Makefile` and set your image name:
+
+```makefile
+IMAGE_NAME := myvendor/my-scaffolder
+```
+
+### 2. Build Docker Image
+
+```bash
+make build
+```
+
+Or manually:
+
+```bash
+docker build -t myvendor/my-scaffolder .
+```
+
+### 3. Publish to Registry
+
+You can publish your image to any Docker registry, for example GitHub Container Registry:
+
+```bash
+# Tag for GitHub Container Registry
+docker tag myvendor/my-scaffolder ghcr.io/username/my-scaffolder:latest
+
+# Login to GitHub Container Registry
+echo $GITHUB_TOKEN | docker login ghcr.io -u username --password-stdin
+
+# Push the image
+docker push ghcr.io/username/my-scaffolder:latest
+```
+
+### 4. Usage
+
+Once published, users can run your scaffolder without installing PHP or Composer:
+
+```bash
+docker run --rm -it -v $(pwd):/project ghcr.io/username/my-scaffolder:latest
+```
+
+Or using the Makefile (for development):
+
+```bash
+make run
+```
+
+With arguments:
+
+```bash
+make run RUN_ARGS="--directory=/custom/path"
+```
+
 ## Project Structure
 
 ```
