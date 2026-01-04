@@ -1,12 +1,18 @@
 {
     "name": "_____/_____",
     "type": "project",
+    "require": {
+        "php": "~8.4.0",
+        "symfony/console": "^8.0.3",
+        "vjik/scaffolder": "^0.1"
+    },
     "autoload": {
         "psr-4": {
-            "_____\\": "src/"
+            "_____\\_____\\": "src/"
         }
     },
-    "require": {
-        "vjik/scaffolder": "dev-master"
+    "config": {
+        "bump-after-update": true,
+        "sort-packages": true
     }
 }
