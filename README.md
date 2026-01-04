@@ -18,7 +18,7 @@ This is a starting point for creating custom scaffolder tools that can:
 
 > [!NOTE]
 > [PHPTG Scaffolder](https://github.com/phptg/scaffolder) - a real-world example of a scaffolder tool built using this 
-> framework.
+> template.
 
 1. Create a new project based on this template:
 
